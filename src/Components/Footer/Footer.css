@@ -1,0 +1,34 @@
+.hero_three{
+    background-color: rgb(8, 10, 10);
+    width: 100%;
+    height: 38%;
+    color: white;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    padding-top: 20px;
+    gap: 20px;
+    line-height: 30px;
+}
+.hero_three li{
+    list-style: none;
+}
+.hero_three li:hover{
+    text-decoration: underline;
+    
+}
+@media (max-width:800px) {
+    .hero_three{
+        gap: 10px;
+        font-size: 14px;
+        
+    }
+}
+@media (max-width:500px) {
+    .hero_three{
+        gap: 7px;
+        font-size: 10px;
+        
+    }
+}

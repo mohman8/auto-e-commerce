@@ -1,0 +1,45 @@
+/* *{
+    width: 100%;
+}
+.cars{
+    display: flex;
+    justify-content: space-between;
+}
+.bmw-image{
+     width: 30%;
+    height: 5%;
+    margin: 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: -4s;
+    background-color: #f2f2f2;
+}
+.bmw-image img{
+    height: 200px;
+    width: 200px;
+}
+.carflex button{
+    width: 100px;
+    height: 40px;
+}
+.carflex{
+    display: flex;
+    gap: 20px;
+    padding: 5px; */
+    /* margin: 20px; */
+    /* justify-content: space-evenly; */
+/* }
+.bmw-image h5{
+    font-size: 22px;
+    padding-left: 5px;
+}
+.carflex h6{
+    font-size: 20px;
+}
+.carflex button:hover{
+    background-color: bisque;
+} */
