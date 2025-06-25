@@ -5,7 +5,7 @@ import { ShopContext } from '../../Context/ShopContext';
 
 const CartItems = () => {
   const {getTotalCartAmount, cartItems, removeFromCart } = useContext(ShopContext);
-
+  console.log(getTotalCartAmount)
   return (
     <div className='cartitems'>
       <div className='cartitems-format-main'>
