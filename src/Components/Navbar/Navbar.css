@@ -11,6 +11,8 @@ padding-top: 12px;
     font-size: 38px;
     font-weight: 600;
     color: #171717;
+    /* outline: none; */
+    text-decoration: none;
 }
 .nav-menu{
     display: flex;

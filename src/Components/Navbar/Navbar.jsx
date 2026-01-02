@@ -13,7 +13,7 @@ const Navbar = () => {
   }
   return (
     <div className="navbar">
-      <div className="logo">Moh Autos</div>
+      <Link to="/" className="logo">Moh Autos</Link>
           <img className='nav-dropdown' onClick={dropdown_toggle} src={arrow_down} alt="" />
       <ul ref={menuRef} className='nav-menu'>
         <li onClick={()=>{setMenu ('Home')}}> <Link style={{textDecoration: 'none'}} to='/'> Home</Link> {menu==='Home'?<hr/>: <></>} </li>

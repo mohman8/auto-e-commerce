@@ -19,7 +19,7 @@ const Hero = () => {
        <p> unbeatable prices </p>
        <p> and a drive you will love. </p>
       </div>
-        <div className="hero-latest-button">  Shop now</div>  
+        <Link to='/shop' className="hero-latest-button">  Shop now</Link>  
       </div>
       <div className="hero-right">
       <img src={bmw_three_removebg} alt="" />

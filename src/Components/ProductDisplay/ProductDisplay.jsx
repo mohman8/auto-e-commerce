@@ -1,55 +1,84 @@
-import React, { useContext } from 'react'
-import './ProductDisplay.css'
-import { ShopContext } from '../../Context/ShopContext';
-const ProductDisplay = (props) => {
-    const {product}=props;
-    const {addToCart}= useContext(ShopContext)
+import React, { useContext, useState } from "react";
+import "./ProductDisplay.css";
+import { ShopContext } from "../../Context/ShopContext";
+import { useNavigate } from "react-router-dom";
+
+const ProductDisplay = ({ product }) => {
+  const { addToCart } = useContext(ShopContext);
+  const [quantity, setQuantity] = useState(1);
+  const [activeImage, setActiveImage] = useState(product.image);
+  const navigate = useNavigate();
+
+  
+  const images = [
+    product.image,
+    product.image,
+    product.image,
+  ];
+
   return (
-    <div className='Productdisplay'>
-      <div className="productdisplay-left">
-      <div className="productdisplay-img-list">
-       <img src={product.image} alt="" />
-       <img src={product.image} alt="" />
-       <img src={product.image} alt="" />
-       <img src={product.image} alt="" />
-      </div>
-      <div className="productdisplay-img">
-        <img className='productdisplay-main-img' src={product.image} alt="" />
-      </div>
-      </div>
-      <div className="productdisplay-right">
+    <div className="pd-wrapper">
+      {/* BACK */}
+      <button className="pd-back-btn" onClick={() => navigate(-1)}>
+        ←
+      </button>
+
+      <div className="pd-content">
+        {/* IMAGES */}
+        <div className="pd-gallery">
+          <div className="pd-thumbs">
+            {images.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt="thumb"
+                className={activeImage === img ? "active" : ""}
+                onClick={() => setActiveImage(img)}
+              />
+            ))}
+          </div>
+
+          <div className="pd-main-img">
+            <img src={activeImage} alt={product.name} />
+          </div>
+        </div>
+
+        {/* INFO */}
+        <div className="pd-info">
           <h1>{product.name}</h1>
-          <div className="productdisplay-right-prices">
-            <div className="productdisplay-right-price-old">
-                {product.old_price}
-              </div>  
-                <div className="productdisplay-right-price-new">
-                    {product.new_price}
-                </div>
-          </div>      
-                <div className="productdisplay-right-description">
-                    Experience the perfect balance of sportiness, luxury, and technology with the BMW 330i M Sport. Powered by a 2.0L  TwinPower Turbo engine, this dynamic sedan delivers 255 horsepower and quick, responsive handling  — making  every drive thrilling and refined.
 
-                       The M Sport package  enhances the 3 Series' athletic edge with aggressive styling, aerodynamic body features, and premium 18" alloy wheels.  Inside, enjoy a premium interior with leather upholstery, ambient lighting, a digital instrument cluster, and BMW’s  iDrive 7 infotainment system with Apple CarPlay and  Android Auto.
+          <div className="pd-price">
+            <span className="new">${product.new_price}</span>
+            <span className="old">${product.old_price}</span>
+          </div>
 
-                       Whether you're cruising the highway or navigating tight  city corners, the BMW 330i M Sport offers  performance,  comfort, and class — all in one sleek package.
-                </div>
-                <div className="productdisplay-right-color">
-                    <h1>select color</h1>
-                </div>
-                <div className="productdisplay-right-colors">
-                    <div>red</div>
-                    <div>blue</div>
-                    <div>brown</div>
-                    <div>white</div>
-                    <div>black</div>
-                </div>
-            
-            <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
-          
+          <p className="pd-desc">
+            Premium performance with refined comfort and modern design —
+            built for elegance and everyday confidence.
+          </p>
+
+          {/* QUANTITY */}
+          <div className="pd-qty">
+            <button onClick={() => quantity > 1 && setQuantity(quantity - 1)}>
+              −
+            </button>
+            <span>{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+          </div>
+
+          {/* CART */}
+          <button
+            className="pd-cart"
+            onClick={() => {
+              for (let i = 0; i < quantity; i++) addToCart(product.id);
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductDisplay
+export default ProductDisplay;

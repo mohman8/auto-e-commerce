@@ -5,6 +5,7 @@
 .hero{
  background-color: linear gradient(180deg, #fde1ff, #e1ffea22 60%);   
  display: flex;
+ 
  /* margin-top: 20px; */
  /* justify-content: center;
  align-items: center; */
@@ -33,6 +34,7 @@ background-color: #fde1ff;
 .hero-latest-button{
 display:flex;
 justify-content:center;
+text-decoration: none;
 align-items:center;
 border-radius:75px;
 margin-top:30px;
@@ -57,7 +59,7 @@ margin-top:30px;
   /* background-color: transparent; */
 }
 .hero-right img{
-   height: 50%;
+   height: 80%;
    width: 80%;
     /* mix-blend-mode:multiply ; */
 }

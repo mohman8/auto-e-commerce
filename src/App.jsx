@@ -8,6 +8,8 @@ import ShopCategory from './Pages/ShopCategory';
 import LoginSignup from './Pages/LoginSignup';
 import Product from './Pages/Product';
 import CartItems from './Components/CartItems/CartItems.jsx'
+import Signup from './Pages/Signup.jsx';
+import Checkout from './Pages/Checkout.jsx';
 export default function App() {
   return (
     <div >
@@ -22,6 +24,8 @@ export default function App() {
           {/* <Route path=':productId' element={<Product/>}/> */}
           <Route path='/cart' element={<CartItems/>}/>
           <Route path='/login' element={<LoginSignup/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/Checkout' element={<Checkout/>}/>
         </Routes>
       </BrowserRouter>
     </div>
